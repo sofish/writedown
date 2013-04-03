@@ -6,28 +6,29 @@
 
 $(function(){
 
-  var $range = $('input[type=range]');
+  var $settings = $('input');
 
   // set default value
-  $preview.on('change', 'input[type=range]', function() {
+  $preview.on('change', 'input', function() {
     var val, that;
 
     that = $(this);
     val = that.val();
 
-    that.parent().find('span').html(val);
+    if(that.attr('type') === 'range') that.parent().find('span').html(val);
     localStorage.setItem('wd' + that.attr('id'), val);
   });
 
   // default value
   ~function() {
 
-    $range.each(function() {
+    $settings.each(function() {
       var item = $(this)
         , history = localStorage.getItem('wd' + item.attr('id'));
 
       if(history) item.val(history);
-      item.parent().find('span').html(item.val());
+      console.log(item, history);
+      if(item.attr('type') === 'range') item.parent().find('span').html(item.val());
     })
 
   }();
@@ -35,7 +36,7 @@ $(function(){
 
   // reset to default
   $('#reset').on('click', function() {
-    $range.each(function() {
+    $settings.each(function() {
       var item = $(this);
       localStorage.removeItem('wd' + item.attr('id'));
       item.val(item.data('default'));

@@ -299,7 +299,12 @@ h1, h2, h3, h4, h5, h6{
 .settings{display:block!important;color:#999;text-shadow:0 1px 0 #fff;font-size:16px!important;line-height:1.8!important;}
 .settings .btn{margin-bottom:30px;}
 .settings label{display:inline-block;width:120px;}
-.settings input{width:250px;margin-right:20px;}
-.settings h1{color:#999;margin-bottom:20px;}
+.settings input{width:250px;margin-right:20px;vertical-align:middle;}
+.settings input[type=text]{border:1px solid #ddd;height:28px;}
+.settings input[type=text]:focus{outline:none;font-size:14px;color:#666;}
+.settings ::-webkit-input-placeholder{font-size:14px;}
+.settings h1{color:#999;margin-bottom:60px;}
 
 #action{padding-top:50px;}
+
+#dashboard{background:url(../img/settings.png) no-repeat 0 0;display:block;width:16px;height:16px;position:fixed;top:30px;right:5%;text-indent: 9999em;background-size:16px;opacity:0.4;}
