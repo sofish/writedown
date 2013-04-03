@@ -1,3 +1,10 @@
+/**
+ * @author: Sofish Lin
+ * @site: http://sofish.de
+ * @license: MIT
+ */
+
+
 var App, $content, $preview, $toolbar, app;
 
 $content = $('#content');

@@ -1,3 +1,9 @@
+/**
+ * @author: Sofish Lin
+ * @site: http://sofish.de
+ * @license: MIT
+ */
+
 var marked, Clipboard, GUI;
 
 // make a referrence to gui

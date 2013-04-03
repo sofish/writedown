@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+/**
+ * @author: Sofish Lin
+ * @site: http://sofish.de
+ * @license: MIT
+ */
+
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
     color: #666;

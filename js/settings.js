@@ -1,3 +1,9 @@
+/**
+ * @author: Sofish Lin
+ * @site: http://sofish.de
+ * @license: MIT
+ */
+
 $(function(){
 
   var $range = $('input[type=range]');
