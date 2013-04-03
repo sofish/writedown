@@ -1,0 +1,19 @@
+{
+  "main": "index.html",
+  "name": "Writedown",
+  "description": "markdown text editor",
+  "version": "0.1",
+  "keywords": [ "markdown", "html" ],
+  "window": {
+    "icon": "link.png",
+    "toolbar": true,
+    "width": 800,
+    "height": 690,
+    "position": "mouse",
+    "min_width": 800,
+    "min_height": 600
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
