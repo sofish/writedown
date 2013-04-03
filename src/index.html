@@ -1,0 +1,38 @@
+<!-- copyright
+@author: Sofish Lin
+@site: http://sofish.de
+@license: MIT
+-->
+
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Writedown</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./js/pretty/prettify.css" />
+    <script src="./js/require.js"></script>
+</head>
+<body>
+
+    <div id="tips"></div>
+
+    <div id="toolbar">
+        <span id="markdown" class="btn on" data-action="origin">Markdown</span>
+        <span id="covert" class="btn" data-action="preview">Preview</span>
+        <span id="viewHTML" class="btn" data-action="viewHTML">HTML</span>
+        <span id="copy" class="btn" data-action="copy">Copy HTML</span>
+        <!-- <span id="save" class="btn btn-ok" data-action="save">Save</span> -->
+        <small id="status"></small>
+    </div>
+
+    <textarea id="content" class="mousetrap" autofocus placeholder="Stop thinking, start creating..."></textarea>
+    <div id="preview" class="typo"></div>
+    <a id="dashboard" href="./settings.html">Settings</a>
+
+    <script type="text/javascript" src="./js/jquery.2.0.b-min.js"></script>
+    <script type="text/javascript" src="./js/pretty/prettify.js"></script>
+    <script type="text/javascript" src="./js/mousetrap.min.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
