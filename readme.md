@@ -19,6 +19,10 @@ run it with [node-webkit](https://github.com/rogerwang/node-webkit)
 - Save: `command` + `s`
 - Settings: `command` + `,`
 
-### 4. Open Source
+### 4. Preview
+
+![writedown preview](http://dribbble.s3.amazonaws.com/users/9545/screenshots/1013357/_____2013-04-04___1.18.39.png)
+
+### 5. Open Source
 
 Licensed Under MIT.
