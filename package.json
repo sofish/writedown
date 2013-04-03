@@ -7,7 +7,7 @@
   "keywords": [ "markdown", "html" ],
   "window": {
     "icon": "link.png",
-    "toolbar": true,
+    "toolbar": false,
     "width": 800,
     "height": 800,
     "position": "mouse",
