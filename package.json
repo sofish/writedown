@@ -1,14 +1,15 @@
 {
   "main": "index.html",
   "name": "Writedown",
+  "author": "sofish@me.com",
   "description": "markdown text editor",
   "version": "0.1",
   "keywords": [ "markdown", "html" ],
   "window": {
     "icon": "link.png",
-    "toolbar": true,
+    "toolbar": false,
     "width": 800,
-    "height": 690,
+    "height": 800,
     "position": "mouse",
     "min_width": 800,
     "min_height": 600

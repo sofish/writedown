@@ -120,6 +120,10 @@ Mousetrap.bind('command+shift+c', function() {
   $('#copy').click();
 });
 
+Mousetrap.bind('command+shift+h', function() {
+  $('#viewHTML').click();
+});
+
 Mousetrap.bind(['command+shift+b', 'esc'], function() {
   $('#markdown').click();
 });
