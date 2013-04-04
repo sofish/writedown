@@ -1,6 +1,10 @@
 # Writedown
 
+![writedown logo](https://github.com/sofish/writedown/blob/master/src/img/mark.png)
+
 Stop thinking, start creating.
+
+> 下载：[Writedown.0.1-beta.app]()
 
 ### 1. How to run
 
