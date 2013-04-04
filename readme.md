@@ -4,7 +4,7 @@
 
 Stop thinking, start creating.
 
-> 下载：[Writedown.0.1-beta.app]()
+> 下载：[Writedown.0.1-beta.app](http://url.cn/DZwQZQ)
 
 ### 1. How to run
 
