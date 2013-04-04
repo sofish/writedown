@@ -1,6 +1,6 @@
 # Writedown
 
-![writedown logo](https://github.com/sofish/writedown/blob/master/src/img/mark.png)
+![writedown logo](https://raw.github.com/sofish/writedown/master/src/img/mark.png)
 
 Stop thinking, start creating.
 
