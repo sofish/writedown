@@ -4,9 +4,12 @@
 
 Stop thinking, start creating.
 
-> 下载：[Writedown.0.1-beta.app](http://url.cn/DZwQZQ)
+### 0. Downloads
 
-### 1. How to run
+- [Writedown.0.1-beta.app @ 微云](http://url.cn/DZwQZQ)
+- [Writedown.0.1-beta.app @ Droplr](http://d.pr/f/1oPa)
+
+### 1. How to run the source
 
 run it with [node-webkit](https://github.com/rogerwang/node-webkit)
 
