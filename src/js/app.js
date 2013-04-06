@@ -5,9 +5,9 @@
  */
 
 
-var App, $content, $preview, $toolbar, app;
+var App, $preview, $toolbar, editor, $code;
 
-$content = $('#content');
+$code = $('#editor');
 $preview = $('#preview');
 $toolbar = $('#toolbar');
 $tips = $('#tips');
@@ -21,7 +21,7 @@ $tips = $('#tips');
   lineheight = localStorage.getItem('wdline-height') &&
     (localStorage.getItem('wdline-height')/100 || 1.8) ;
 
-  settings = '<style>#content, #preview {' +
+  settings = '<style>.CodeMirror, #preview {' +
     'font-size:' + fontsize + 'px;' +
     'line-height:' + lineheight + ';' +
     '}</style>';
@@ -29,6 +29,14 @@ $tips = $('#tips');
   $('head').append(settings);
 
 }();
+
+// highlight markdown
+editor = CodeMirror(document.querySelector('#editor'), {
+  mode: 'gfm',
+  //lineNumbers: true,
+  value: localStorage.getItem('writedown') || '',
+  theme: "default"
+});
 
 
 App = function(){
@@ -42,12 +50,12 @@ App.prototype.html = function() {
 
 // get the md source
 App.prototype.md = function() {
-  return $.trim($content.val());
+  return editor.getValue();
 }
 
 App.prototype.origin = function() {
   $preview.hide();
-  $content.show('fast');
+  $code.show('fast');
 }
 
 // save as a md document
@@ -57,13 +65,13 @@ App.prototype.save = function() {
 
 // preview markdown
 App.prototype.preview = function() {
-  $content.hide();
+  $code.hide();
   $preview.html(this.html()).show('fast');
 };
 
 // export to html
 App.prototype.viewHTML = function() {
-  $content.hide()
+  $code.hide();
   $preview.hide().html('');
   $('<pre class="prettyprint lang-html" />').appendTo($preview).text(this.html());
   $preview.show('fast');
@@ -87,19 +95,9 @@ App.prototype.init = function() {
     localStorage.setItem('writedown', that.md());
   };
 
-  // recovery data from the last modify
-  history = function() {
-    var history = localStorage.getItem('writedown');
-    if(history) $content.val(history);
-  }
-
   $(window).on('beforeunload', quit);
-  $(window).on('load', history);
 
-  // keep on focus
-  $('body').on('click', function() {
-    $content.focus();
-  });
+  //TODO: keep on focus
 
 }
 

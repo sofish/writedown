@@ -6,8 +6,8 @@
   "version": "0.1",
   "keywords": [ "markdown", "html" ],
   "window": {
-    "icon": "link.png",
-    "toolbar": false,
+    "icon": "img/mark.png",
+    "toolbar": true,
     "width": 800,
     "height": 800,
     "position": "mouse",

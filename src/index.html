@@ -11,6 +11,7 @@
     <title>Writedown</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./js/pretty/prettify.css" />
+    <link rel="stylesheet" href="js/codemirror11/lib/codemirror.css" />
     <script src="./js/require.js"></script>
 </head>
 <body>
@@ -26,11 +27,16 @@
         <small id="status"></small>
     </div>
 
-    <textarea id="content" class="mousetrap" autofocus placeholder="Stop thinking, start creating..."></textarea>
+    <div id="editor"></div>
     <div id="preview" class="typo"></div>
     <a id="dashboard" href="./settings.html">Settings</a>
 
     <script type="text/javascript" src="./js/jquery.2.0.b-min.js"></script>
+    <script type="text/javascript" src="js/codemirror11/lib/codemirror.js"></script>
+    <script type="text/javascript" src="js/codemirror11/addon/mode/overlay.js"></script>
+    <script type="text/javascript" src="js/codemirror11/mode/markdown/markdown.js"></script>
+    <script type="text/javascript" src="js/codemirror11/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="js/codemirror11/mode/gfm/gfm.js"></script>
     <script type="text/javascript" src="./js/pretty/prettify.js"></script>
     <script type="text/javascript" src="./js/mousetrap.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>

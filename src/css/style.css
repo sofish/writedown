@@ -68,9 +68,9 @@ iframe {
 
 /* 块/段落引用 */
 blockquote {
-    margin: 1em 4em 1em 2em;
-    padding: 0.6em 1em;
-    background: #f1f1f1;
+    border-left: 0.4em solid #ddd;
+    background:#eee;
+    padding-left: 1em
 }
 blockquote blockquote {
     padding: 0 0 0 1em;
@@ -291,9 +291,10 @@ h1, h2, h3, h4, h5, h6{
 
 #toolbar{position:fixed;text-align:center;width:100%;bottom:40px;}
 
-#content, #preview{display:block;background:none;border:none;white-space:wrap;overflow-y:scroll;margin:60px auto 0;width:80%;height:-webkit-calc(100% - 50px);}
-#content{resize:none;}
-#content:focus{outline:none;color:#666;resize:none;}
+#editor{height:-webkit-calc(100% + 40px);}
+#preview, .CodeMirror{display:block;background:none!important;border:none;white-space:wrap;overflow-y:scroll;margin:60px auto 0;width:80%;height:-webkit-calc(100%)!important;}
+.CodeMirror{width:100%;margin-top:0;padding:60px 10% 0;box-sizing:border-box;}
+.CodeMirror:focus{outline:none;color:#666;resize:none;}
 #preview{display:none;}
 
 .settings{display:block!important;color:#999;text-shadow:0 1px 0 #fff;font-size:16px!important;line-height:1.8!important;}
@@ -307,4 +308,4 @@ h1, h2, h3, h4, h5, h6{
 
 #action{padding-top:50px;}
 
-#dashboard{background:url(../img/settings.png) no-repeat 0 0;display:block;width:16px;height:16px;position:fixed;top:30px;right:5%;text-indent: 9999em;background-size:16px;opacity:0.4;}
+#dashboard{background:url(../img/settings.png) no-repeat 0 0;display:block;width:16px;height:16px;position:fixed;top:30px;right:5%;text-indent: 9999em;background-size:16px;opacity:0.4;z-index:1000;}
