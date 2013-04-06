@@ -60,16 +60,16 @@
 
 /* DEFAULT THEME */
 
-.cm-s-default .cm-keyword {color: #708;}
-.cm-s-default .cm-atom {color: #06c;}
-.cm-s-default .cm-number {color: #164;}
+.cm-s-default .cm-keyword {color: #07f;}
+.cm-s-default .cm-atom {color: #999;}
+.cm-s-default .cm-number {color: #9c0;}
 .cm-s-default .cm-def {color: #08c;}
 .cm-s-default .cm-variable {color: #666;}
-.cm-s-default .cm-variable-2 {color: #888;}
+.cm-s-default .cm-variable-2 {color: #666;}
 .cm-s-default .cm-variable-3 {color: #999;}
 .cm-s-default .cm-property {color: #666;}
 .cm-s-default .cm-operator {color: #666;}
-.cm-s-default .cm-comment {color: #a50;font-family: Courier, monospace;}
+.cm-s-default .cm-comment {color: #a50;}
 .cm-s-default .cm-string {color: #a11;}
 .cm-s-default .cm-string-2 {color: #f50;}
 .cm-s-default .cm-meta {color: #555;}
@@ -79,16 +79,16 @@
 .cm-s-default .cm-bracket {color: #997;}
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #03f;}
-.cm-s-default .cm-header {color: #555;}
+.cm-s-default .cm-header {color: #555; font-family: Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif; font-size: 1.3em;}
 .cm-s-default .cm-quote {color: #999;}
 .cm-s-default .cm-hr {color: #999;}
 .cm-s-default .cm-link {color: #07f;}
 
+.cm-comment, .cm-tag{font-family: Courier, monospace;}
 .cm-negative {color: #d44;}
 .cm-positive {color: #292;}
 .cm-header, .cm-strong {font-weight: bold;}
 .cm-em {font-style: italic;}
-.cm-link {text-decoration: underline;}
 
 .cm-invalidchar {color: #f00;}
 

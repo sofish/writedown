@@ -4,13 +4,17 @@
  * @license: MIT
  */
 
-
 var App, $preview, $toolbar, editor, $code, writedown;
 
 $code = $('#editor');
 $preview = $('#preview');
 $toolbar = $('#toolbar');
 $tips = $('#tips');
+
+// prevent a to open
+$(document).on('click', 'a', function(e) {
+  if($(this).data('action') !== 'go') e.preventDefault();
+})
 
 // embed settings
 ~function() {
@@ -33,7 +37,7 @@ $tips = $('#tips');
 // highlight markdown
 editor = CodeMirror(document.querySelector('#editor'), {
   mode: 'gfm',
-  //lineNumbers: true,
+  // lineNumbers: true,
   value: localStorage.getItem('writedown') || '',
   theme: "default"
 });
@@ -122,23 +126,58 @@ $toolbar.on('click', '.btn', function() {
   if(/preview|viewHTML/.test(action)) prettyPrint();
 });
 
-Mousetrap.bind('command+shift+p', function() {
+/**
+ * adds a bindGlobal method to Mousetrap that allows you to
+ * bind specific keyboard shortcuts that will still work
+ * inside a text input field
+ *
+ * usage:
+ * Mousetrap.bindGlobal('ctrl+s', _saveChanges);
+ */
+Mousetrap = (function(Mousetrap) {
+  var _global_callbacks = {},
+    _original_stop_callback = Mousetrap.stopCallback;
+
+  Mousetrap.stopCallback = function(e, element, combo) {
+    if (_global_callbacks[combo]) {
+      return false;
+    }
+
+    return _original_stop_callback(e, element, combo);
+  };
+
+  Mousetrap.bindGlobal = function(keys, callback, action) {
+    Mousetrap.bind(keys, callback, action);
+
+    if (keys instanceof Array) {
+      for (var i = 0; i < keys.length; i++) {
+        _global_callbacks[keys[i]] = true;
+      }
+      return;
+    }
+    _global_callbacks[keys] = true;
+  };
+
+  return Mousetrap;
+}) (Mousetrap);
+
+Mousetrap.bindGlobal('command+shift+p', function() {
   $('#covert').click();
 });
 
-Mousetrap.bind('command+shift+c', function() {
+Mousetrap.bindGlobal('command+shift+c', function() {
   $('#copy').click();
 });
 
-Mousetrap.bind('command+shift+h', function() {
+Mousetrap.bindGlobal('command+shift+h', function() {
   $('#viewHTML').click();
 });
 
-Mousetrap.bind(['command+shift+b', 'esc'], function() {
+Mousetrap.bindGlobal(['command+shift+b', 'esc'], function() {
   $('#markdown').click();
 });
 
-Mousetrap.bind(['command+,'], function() {
+Mousetrap.bindGlobal(['command+,'], function() {
   window.location.href = './settings.html';
 });
 

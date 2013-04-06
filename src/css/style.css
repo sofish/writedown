@@ -9,7 +9,7 @@
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
     color: #666;
-    background: #eee url(../img/bg.gif) repeat 0 0;
+    background: #f8f8f8 url(../img/bg.png) repeat 0 0;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     overflow: hidden;
@@ -36,11 +36,11 @@ audio, canvas, video {
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 body, button, input, select, textarea {
-    font:500 16px/30px Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+    font:500 14px/1.25 Cambria,Georgia,Palatino,Times New Roman,serif;
     vertical-align: text-bottom;
 }
 
-a{color:#07f;}
+a{color: #72a360}
 
 /* 去掉各Table  cell 的边距并让其边重合 */
 table {
@@ -71,8 +71,9 @@ iframe {
 /* 块/段落引用 */
 blockquote {
     border-left: 0.4em solid #ddd;
-    background:#eee;
-    padding-left: 1em
+    background:#fff;
+    padding:0.2em 1em;
+    margin-bottom:1em;
 }
 blockquote blockquote {
     padding: 0 0 0 1em;
@@ -159,12 +160,13 @@ mark {
 
 /* 代码片断 */
 pre, code {
-    font-family: Menlo, Monaco, Consolas, "Courier New", Courier, monospace;
+    font-family: Courier, monospace;
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 
 pre{line-height:1.2;}
+code{background:#fff;border:1px dashed #ddd;padding:0 3px;border-radius:2px;}
 
 /* 底部印刷体、版本等标记 */
 small {
@@ -185,10 +187,12 @@ small {
     zoom: 1
 }
 
+.typo pre, .typo-pre{background:#fff;border:1px dashed #ddd;padding:10px;}
+
 /* 保证块/段落之间的空白隔行 */
 .typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
 .typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table {
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -200,8 +204,10 @@ h1, h2, h3, h4, h5, h6{
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 .typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
 .typo-h1, .typo-h2, .typo-h3, .typo-h4, .typo-h5, .typo-h6 {
-    margin-bottom: 0.4em;
-    line-height: 1.5;
+    line-height: 1.1;
+    font-family: Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+    color: #233;
+    margin: 1.5em 0 0;
 }
 .typo h1, .typo-h1 {
     font-size: 1.8em;
@@ -288,8 +294,8 @@ h1, h2, h3, h4, h5, h6{
 ::-webkit-scrollbar-thumb{background:rgba(0,0,0,.3);border-radius:3px;}
 
 #tips, #toolbar, #action, #editor{-webkit-user-select:none;}
-#tips{display:none;position:fixed;top:30%;text-align:center;line-height:30px;width:100%;pointer-evens:none;height:30px;}
-#tips span{background:rgba(0,136,0,.4);display:inline-block;border-radius:5px;padding:0 20px;color:#fff;}
+#tips{display:none;position:fixed;top:20px;text-align:center;line-height:30px;width:100%;pointer-evens:none;height:30px;}
+#tips span{font-size:14px;background:rgba(0,136,0,.5);display:inline-block;border-radius:5px;padding:0 20px;color:#fff;}
 
 #toolbar{position:fixed;text-align:center;width:100%;bottom:40px;}
 
@@ -297,7 +303,7 @@ h1, h2, h3, h4, h5, h6{
 #preview, .CodeMirror{display:block;background:none!important;border:none;white-space:wrap;overflow-y:scroll;margin:60px auto 0;width:80%;height:-webkit-calc(100%)!important;}
 .CodeMirror{width:100%;margin-top:0;padding:60px 10% 0;box-sizing:border-box;}
 .CodeMirror:focus{outline:none;color:#666;resize:none;}
-#preview{display:none;}
+#preview{display:none;position:relative;top:-20px;}
 
 /* hide scrollbar */
 .CodeMirror-vscrollbar, .CodeMirror-hscrollbar{display:none!important;}
@@ -313,4 +319,4 @@ h1, h2, h3, h4, h5, h6{
 
 #action{padding-top:50px;}
 
-#dashboard{background:url(../img/settings.png) no-repeat 0 0;display:block;width:16px;height:16px;position:fixed;top:30px;right:5%;text-indent: 9999em;background-size:16px;opacity:0.4;z-index:1000;}
+#dashboard{background:url(../img/settings.png) no-repeat 0 0;display:block;width:16px;height:16px;position:fixed;top:30px;right:5%;text-indent: 9999em;background-size:12px;opacity:0.4;z-index:1000;}
