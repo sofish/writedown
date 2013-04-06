@@ -6,8 +6,8 @@ Stop thinking, start creating.
 
 ### 0. Downloads
 
-- [Writedown.0.1-beta.app @ 微云](http://url.cn/DZwQZQ)
-- [Writedown.0.1-beta.app @ Droplr](http://d.pr/f/1oPa)
+- Writedown.0.2-beta.app [微云](http://url.cn/CvQO7T) [Droplr](http://d.pr/f/xWdN)
+- Writedown.0.1-beta.app [微云](http://url.cn/DZwQZQ) [Droplr](http://d.pr/f/1oPa)
 
 ### 1. How to run the source
 
