@@ -31,7 +31,7 @@ $tips = $('#tips');
 }();
 
 // highlight markdown
-editor = CodeMirror(document.querySelector('#editor'), {
+editor = CodeMirror.fromTextArea(document.querySelector('textarea'), {
   mode: 'gfm',
   //lineNumbers: true,
   value: localStorage.getItem('writedown') || '',
@@ -94,6 +94,11 @@ App.prototype.init = function() {
   quit = function() {
     localStorage.setItem('writedown', that.md());
   };
+
+  // keep focus
+  //  $(document).on('click', function() {
+  //    editor.focus();
+  //  })
 
   $(window).on('beforeunload', quit);
 

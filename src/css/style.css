@@ -280,12 +280,12 @@ h1, h2, h3, h4, h5, h6{
 .btn.on{background:-webkit-linear-gradient(top, #eee, #f8f8f8);box-shadow:none;text-shadow:none;color:#999;pointer-evens:none;cursor:text;border-bottom:1px solid #ddd;}
 .btn.on, .btn-ok.on{border-top:1px solid #eee;}
 
-::-webkit-input-placeholder{color:#72a360;}
+::-webkit-input-placeholder, .CodeMirror-placeholder{font-size:20px; color:#72a360!important;}
 ::selection {background-color:#333;color:#fff;}
 ::-webkit-scrollbar{background:none;width:6px;}
 ::-webkit-scrollbar-thumb{background:rgba(0,0,0,.3);border-radius:3px;}
 
-#tips, #toolbar, #action{-webkit-user-select:none;}
+#tips, #toolbar, #action, #editor{-webkit-user-select:none;}
 #tips{display:none;position:fixed;top:30%;text-align:center;line-height:30px;width:100%;pointer-evens:none;height:30px;}
 #tips span{background:rgba(0,136,0,.4);display:inline-block;border-radius:5px;padding:0 20px;color:#fff;}
 
