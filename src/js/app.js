@@ -5,7 +5,7 @@
  */
 
 
-var App, $preview, $toolbar, editor, $code;
+var App, $preview, $toolbar, editor, $code, writedown;
 
 $code = $('#editor');
 $preview = $('#preview');
@@ -31,7 +31,7 @@ $tips = $('#tips');
 }();
 
 // highlight markdown
-editor = CodeMirror.fromTextArea(document.querySelector('textarea'), {
+editor = CodeMirror(document.querySelector('#editor'), {
   mode: 'gfm',
   //lineNumbers: true,
   value: localStorage.getItem('writedown') || '',
@@ -96,9 +96,9 @@ App.prototype.init = function() {
   };
 
   // keep focus
-  //  $(document).on('click', function() {
-  //    editor.focus();
-  //  })
+  $(document).on('click', function() {
+    editor.focus();
+  })
 
   $(window).on('beforeunload', quit);
 

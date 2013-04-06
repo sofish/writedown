@@ -16,7 +16,6 @@
   padding: 4px 0; /* Vertical padding around content */
 }
 .CodeMirror pre {
-  padding: 0 4px; /* Horizontal padding of content */
   white-space: pre-wrap;
 }
 

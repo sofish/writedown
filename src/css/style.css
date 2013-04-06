@@ -40,6 +40,8 @@ body, button, input, select, textarea {
     vertical-align: text-bottom;
 }
 
+a{color:#07f;}
+
 /* 去掉各Table  cell 的边距并让其边重合 */
 table {
     border-collapse: collapse;
