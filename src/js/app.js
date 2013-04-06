@@ -7,6 +7,7 @@
 var App, $preview, $toolbar, editor, $code, writedown;
 
 $code = $('#editor');
+$textarea = $('textarea', $code);
 $preview = $('#preview');
 $toolbar = $('#toolbar');
 $tips = $('#tips');
@@ -34,11 +35,16 @@ $(document).on('click', 'a', function(e) {
 
 }();
 
+
+console.log($textarea)
+
+// set history from localstory
+$textarea.val(localStorage.getItem('writedown'));
+
 // highlight markdown
-editor = CodeMirror(document.querySelector('#editor'), {
+editor = CodeMirror.fromTextArea($textarea.get(0), {
   mode: 'gfm',
   // lineNumbers: true,
-  value: localStorage.getItem('writedown') || '',
   theme: "default"
 });
 

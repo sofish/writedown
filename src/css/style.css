@@ -36,7 +36,7 @@ audio, canvas, video {
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 body, button, input, select, textarea {
-    font:500 14px/1.25 Cambria,Georgia,Palatino,Times New Roman,serif;
+    font:500 14px/1.25 Hiragino Sans GB, WenQuanYi Micro Hei,sans-serif;
     vertical-align: text-bottom;
 }
 
@@ -205,7 +205,6 @@ h1, h2, h3, h4, h5, h6{
 .typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
 .typo-h1, .typo-h2, .typo-h3, .typo-h4, .typo-h5, .typo-h6 {
     line-height: 1.1;
-    font-family: Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
     color: #233;
     margin: 1.5em 0 0;
 }

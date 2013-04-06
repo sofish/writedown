@@ -27,7 +27,6 @@ $(function(){
         , history = localStorage.getItem('wd' + item.attr('id'));
 
       if(history) item.val(history);
-      console.log(item, history);
       if(item.attr('type') === 'range') item.parent().find('span').html(item.val());
     })
 

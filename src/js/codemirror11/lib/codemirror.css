@@ -79,10 +79,10 @@
 .cm-s-default .cm-bracket {color: #997;}
 .cm-s-default .cm-tag {color: #170;}
 .cm-s-default .cm-attribute {color: #03f;}
-.cm-s-default .cm-header {color: #555; font-family: Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif; font-size: 1.3em;}
+.cm-s-default .cm-header {color: #233; font:1.2em Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;}
 .cm-s-default .cm-quote {color: #999;}
 .cm-s-default .cm-hr {color: #999;}
-.cm-s-default .cm-link {color: #07f;}
+.cm-s-default .cm-link {color: #72a360}
 
 .cm-comment, .cm-tag{font-family: Courier, monospace;}
 .cm-negative {color: #d44;}
