@@ -7,7 +7,7 @@
 }
 .CodeMirror-scroll {
   /* Set scrolling behaviour here */
-  /*overflow: auto;*/
+  overflow: auto;
 }
 
 /* PADDING */
@@ -17,6 +17,7 @@
 }
 .CodeMirror pre {
   padding: 0 4px; /* Horizontal padding of content */
+  white-space: pre-wrap;
 }
 
 .CodeMirror-scrollbar-filler {
@@ -69,7 +70,7 @@
 .cm-s-default .cm-variable-3 {color: #999;}
 .cm-s-default .cm-property {color: #666;}
 .cm-s-default .cm-operator {color: #666;}
-.cm-s-default .cm-comment {color: #a50;font-family: Menlo, Monaco, Consolas, "Courier New", Courier, monospace;}
+.cm-s-default .cm-comment {color: #a50;font-family: Courier, monospace;}
 .cm-s-default .cm-string {color: #a11;}
 .cm-s-default .cm-string-2 {color: #f50;}
 .cm-s-default .cm-meta {color: #555;}
@@ -176,7 +177,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
   font-family: inherit;
   font-size: inherit;
   margin: 0;
-  white-space: pre;
+  white-space: pre-wrap;
   word-wrap: normal;
   line-height: inherit;
   color: inherit;
