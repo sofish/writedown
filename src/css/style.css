@@ -318,4 +318,16 @@ h1, h2, h3, h4, h5, h6{
 
 #action{padding-top:50px;}
 
-#dashboard{background:url(../img/settings.png) no-repeat 0 0;display:block;width:16px;height:16px;position:fixed;top:30px;right:5%;text-indent: 9999em;background-size:12px;opacity:0.4;z-index:1000;}
+#dashboard{background:url(../img/settings.png) no-repeat 0 0;display:block;width:24px;height:24px;position:fixed;top:30px;right:5%;text-indent: 9999em;background-size:24px;opacity:0.4;z-index:1000;}
+#dashboard.anime{-webkit-animation: rotate 1s infinite;}
+
+@-webkit-keyframes rotate {
+  0%   {}
+  50%  { -webkit-transform: rotate(90deg); }
+  100% { -webkit-transform: rotate(180deg); }
+}
+@keyframes rotate {
+  0%   {}
+  50%  { -webkit-transform: rotate(90deg); }
+  100% { -webkit-transform: rotate(180deg); }
+}
