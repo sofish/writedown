@@ -12,10 +12,16 @@ $preview = $('#preview');
 $toolbar = $('#toolbar');
 $tips = $('#tips');
 
+// NanoDB settings (Will Wen Gunn)
+var nano = require(process.cwd() + '/js/nano');
+var FileStore = require(process.cwd() + '/js/filestore');
+
+nano.store = new FileStore(process.cwd() + '/js/writedown.data');
+
 // prevent a to open
 $(document).on('click', 'a', function(e) {
   if($(this).data('action') !== 'go') e.preventDefault();
-})
+});
 
 // embed settings
 ~function() {
@@ -36,17 +42,29 @@ $(document).on('click', 'a', function(e) {
 }();
 
 
-console.log($textarea)
+// set history from NanoDB
+nano.get('writedown', function(err, value) {
+  var self = arguments.callee;
+  if (err)
+    return nano.set('writedown', '', function() {
+      self(null, '');
+    });
 
-// set history from localstory
-$textarea.val(localStorage.getItem('writedown'));
+  $textarea.val(value);
+  if ($textarea.get(0)) {
+    // highlight markdown
+    editor = CodeMirror.fromTextArea($textarea.get(0), {
+      mode: 'gfm',
+      // lineNumbers: true,
+      theme: "default"
+    });
 
-// highlight markdown
-editor = CodeMirror.fromTextArea($textarea.get(0), {
-  mode: 'gfm',
-  // lineNumbers: true,
-  theme: "default"
+
+    writedown = new App();
+  }
 });
+
+
 
 
 App = function(){
@@ -101,22 +119,37 @@ App.prototype.init = function() {
   that = this;
 
   // save data to local disk before close
-  quit = function() {
-    localStorage.setItem('writedown', that.md());
+  quit = function(evt) {
+    nano.set('writedown', that.md(), function() {});
   };
 
   // keep focus
   $(document).on('click', function() {
     editor.focus();
-  })
+  });
+
+  // auto saving (Will Wen Gunn)
+  var timer = null;
+  $(editor.display.input).on('keydown', function(evt) {
+    if (timer)
+      clearTimeout(timer);
+
+    timer = setTimeout(function() {
+      $('#dashboard').addClass('anime');
+      nano.set('writedown', that.md(), function() {
+        setTimeout(function() {
+          $('#dashboard').removeClass('anime');
+        }, 2000);
+      });
+      clearTimeout(timer);
+    }, 1500);
+  });
 
   $(window).on('beforeunload', quit);
 
   //TODO: keep on focus
 
 }
-
-writedown = new App();
 
 $toolbar.on('click', '.btn', function() {
 

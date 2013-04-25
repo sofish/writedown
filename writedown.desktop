@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=WriteDown
+GenericName=Text Editor
+
+Exec=/usr/share/writedown/run.sh
+Terminal=false
+Icon=/usr/share/writedown/src/img/mark.png
+Type=Application
+Categories=TextEditor;
