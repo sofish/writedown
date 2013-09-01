@@ -187,3 +187,6 @@ Mousetrap.bindGlobal(['command+,'], function() {
   window.location.href = './settings.html';
 });
 
+var Window = require("nw.gui").Window.get();
+Window.show();
+
