@@ -79,11 +79,8 @@ App.prototype.save = function() {
       });
       ws.end(mdSource,'utf8');
       ws.on('finish',function(){
-        $tips.html('<span>Markdown source save completed!</span>').show('fast');
-        setTimeout(function(){
-          $tips.fadeOut();
-        }, 1000);
-      })
+        App.showTips('Markdown source has been saved!');
+      });
   });
 };
 
@@ -103,11 +100,15 @@ App.prototype.viewHTML = function() {
 
 App.prototype.copy = function() {
   Clipboard.set(this.html(), 'text');
-  $tips.html('<span>HTML is copied!</span>').show('fast');
+  App.showTips('HTML is copied!');
+};
+
+App.showTips = function(msg) {
+  $tips.html('<span>'+msg+'</span>').show('fast');
   setTimeout(function(){
     $tips.fadeOut();
   }, 1000);
-};
+}
 
 App.prototype.init = function() {
   var quit, that;
