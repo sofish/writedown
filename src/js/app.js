@@ -4,8 +4,9 @@
  * @license: MIT
  */
 
-var App, $preview, $toolbar, editor, $code, writedown;
+var App, $preview, $toolbar, editor, $code, writedown,gui;
 
+gui = require("nw.gui");
 $code = $('#editor');
 $textarea = $('textarea', $code);
 $preview = $('#preview');
@@ -34,9 +35,6 @@ $(document).on('click', 'a', function(e) {
   $('head').append(settings);
 
 }();
-
-
-console.log($textarea)
 
 // set history from localstory
 $textarea.val(localStorage.getItem('writedown'));
@@ -71,6 +69,19 @@ App.prototype.origin = function() {
 // save as a md document
 App.prototype.save = function() {
   var fs = require('fs');
+  var mdSource = this.md();
+  var saveElem = $('<input type="file" nwsaveas>');
+  saveElem.click();
+  saveElem.on('change',function(e){
+      var path = e.currentTarget.files[0].path;
+      var ws = fs.createWriteStream(path,{
+        flag: 'w'
+      });
+      ws.end(mdSource,'utf8');
+      ws.on('finish',function(){
+        App.showTips('Markdown source has been saved!');
+      });
+  });
 };
 
 // preview markdown
@@ -89,11 +100,15 @@ App.prototype.viewHTML = function() {
 
 App.prototype.copy = function() {
   Clipboard.set(this.html(), 'text');
-  $tips.html('<span>HTML is copied!</span>').show('fast');
+  App.showTips('HTML is copied!');
+};
+
+App.showTips = function(msg) {
+  $tips.html('<span>'+msg+'</span>').show('fast');
   setTimeout(function(){
     $tips.fadeOut();
   }, 1000);
-};
+}
 
 App.prototype.init = function() {
   var quit, that;
@@ -183,7 +198,16 @@ Mousetrap.bindGlobal(['command+shift+b', 'esc'], function() {
   $('#markdown').click();
 });
 
+Mousetrap.bindGlobal('command+s',function() {
+  writedown['save']();
+});
+
 Mousetrap.bindGlobal(['command+,'], function() {
   window.location.href = './settings.html';
 });
+
+
+var Window = gui.Window.get();
+Window.show();
+
 
